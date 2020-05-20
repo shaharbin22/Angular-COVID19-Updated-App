@@ -1,0 +1,13 @@
+button{
+    margin-left: 450px;
+    margin-top: 10px;
+}
+table{
+    font-family: 'BioRhyme', serif;
+    font-size: 30px;
+}
+main{
+    background-image: url(images/corona.jpg);
+    background-size: 100%;
+    color: white;
+}

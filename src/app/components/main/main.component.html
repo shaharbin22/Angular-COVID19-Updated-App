@@ -1,0 +1,81 @@
+<main>
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Logout 
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item">Logout</a>
+    </div>
+  </div>
+
+  <div class="header bg">
+    <div class="container">
+      <div class="row">
+        <header class="col-xl-12" style="text-align: center;">
+            <h1>Welcome To CoVid-19 Tracker </h1>
+            <label style="color: white; margin-right: 10px;"> Choose Your Country : </label>
+            <select (change)="getCoronaData($event.target.value)">
+              <option style="text-align: center;" *ngFor="let country of countries" value="{{country.Slug}}">
+                {{country.Country}}
+              </option>
+            </select>
+            <table class="table table-dark" *ngIf="report[0]" style="margin-top: 15px;">
+
+              <tbody *ngFor="let country of report" >
+                <tr>
+                  <th scope="row" style="color: blue;">Country:{{country.country}}</th>
+                </tr>
+                <tr>
+                  <th scope="row" style="color: #00cfe8;">Total Active Cases:{{country.active}}</th>
+                </tr>
+                <tr>
+                  <th scope="row" style="color: yellow;">Total Confirmed Cases:{{country.confirmed}}</th>
+                </tr>
+                <tr>
+                  <th scope="row" style="color: green;">Total Recovered Cases:{{country.recovered}}</th>
+                </tr>
+                <tr>
+                  <th scope="row" style="color: red;">Total Deaths Cases:{{country.deaths}}</th>
+                </tr>
+                <tr>
+                  <th scope="row" style="color: white;">Relevance Date:{{country.date | date}}</th>
+                </tr>
+
+              </tbody>
+            </table>
+        </header>
+      </div>
+      <div class="row" style="margin: 40px;">
+        <div class="col-xs-12 text-center">
+          <div class="down">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 text-center">
+          <div class="about-content">
+            
+               <p>This Tracker Made With api.covid19api.com And Made By @Shahar Binev</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <div class="features-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
